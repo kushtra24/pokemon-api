@@ -23,4 +23,20 @@ export class PokemonService {
     return this.http.get(environment.urls.pokemonList, this.getHeaders());
   }
 
+  /**
+   * get a pokemon details but name
+   * @param name string
+   */
+  getPokemonDetails(name: string) {
+    return this.http.get(environment.urls.pokemon + name, this.getHeaders());
+  }
+
+  /**
+   * get Evolution chain
+   * @param id number
+   */
+  getPokemonEvolution(id: number) {
+    return this.http.get('https://pokeapi.co/api/v2/evolution-chain/' + id);
+  }
+
 }
